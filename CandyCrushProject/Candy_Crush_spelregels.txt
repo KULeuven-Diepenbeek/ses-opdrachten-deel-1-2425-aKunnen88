@@ -1,5 +1,5 @@
-Auteur: Arne Kunnen
- 
+Pietje
+
 CANDY CRUSH spelregels 
  
 Het doel van Candy Crush is om zoveel mogelijk punten te behalen door het matchen van kleurrijke snoepjes op het speelveld. 
