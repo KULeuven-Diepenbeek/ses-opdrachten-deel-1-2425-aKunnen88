@@ -19,7 +19,7 @@ dependencies {
     testImplementation libs.junit.jupiter
     implementation 'com.google.code.gson:gson:2.12.1'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
+    testImplementation "org.assertj:assertj-core:3.11.1"
     // This dependency is used by the application.
     implementation libs.guava
 }
@@ -33,7 +33,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'be.ses.CheckNeighboursInGrid'
+    mainClass = 'be.ses.App'
 }
 
 tasks.named('test') {
@@ -44,8 +44,8 @@ tasks.named('test') {
 jar {
     manifest {
         attributes(
-            'Main-Class': application.mainClass // Dit verwijst correct naar de juiste mainClass
+            'App': application.mainClass // Dit verwijst correct naar de juiste mainClass
         )
     }
-    archiveBaseName = 'checkneighbours'  // De naam van de gegenereerde jar
+    archiveBaseName = 'CheckNeighboursInGridTest'  // De naam van de gegenereerde jar
 }
