@@ -42,10 +42,10 @@ tasks.named('test') {
 }
 
 jar {
-  manifest {
-    attributes(
-      'App': application.mainClass // dit maakt een verwijzing naar de mainClass eigenschap die je in het application {} blok hebt ingesteld
-    )
-  }
-  archiveBaseName = 'CheckNeighboursInGridTest'  // enkel als je de naam van de gegenereerde jar wil wijzigen
+    manifest {
+        attributes(
+            'Main-Class': application.mainClass // Dit verwijst correct naar de juiste mainClass
+        )
+    }
+    archiveBaseName = 'checkneighbours'  // De naam van de gegenereerde jar
 }
