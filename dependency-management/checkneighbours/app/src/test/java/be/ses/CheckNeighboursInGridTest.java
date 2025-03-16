@@ -48,6 +48,59 @@ class CheckNeighboursInGridTest {
     }
 
     @Test
+    void testRechterZijde() {
+
+        List<Integer> grid = List.of(
+            1, 2, 7,
+            4, 5, 7,
+            7, 8, 7
+        );
+        int width = 3;
+        int height = 3;
+        int indexToCheck = 5;
+
+        Iterable<Integer> result = CheckNeighboursInGrid.getSameNeighboursIds(grid, width, height, indexToCheck);
+
+        assertIterableEquals(List.of(2, 8), result);
+    }
+
+    @Test
+    void controleHoek() {
+
+        List<Integer> grid = List.of(
+            5, 2, 7,
+            4, 5, 7,
+            4, 8, 7
+        );
+        int width = 3;
+        int height = 3;
+        int indexToCheck = 6;
+
+        Iterable<Integer> result = CheckNeighboursInGrid.getSameNeighboursIds(grid, width, height, indexToCheck);
+
+        assertIterableEquals(List.of(3), result);
+    }
+
+    @Test
+    void geenGemeenschappelijkeBuren() {
+
+        List<Integer> grid = List.of(
+            1, 2, 3,
+            4, 5, 6,
+            7, 8, 9
+        );
+        int width = 3;
+        int height = 3;
+        int indexToCheck = 1;
+
+        Iterable<Integer> result = CheckNeighboursInGrid.getSameNeighboursIds(grid, width, height, indexToCheck);
+
+        assertIterableEquals(List.of(), result);
+    }
+
+    
+
+    @Test
     void testInvalidIndexThrowsException() {
         // Arrange: Setup grid en index
         List<Integer> grid = List.of(
