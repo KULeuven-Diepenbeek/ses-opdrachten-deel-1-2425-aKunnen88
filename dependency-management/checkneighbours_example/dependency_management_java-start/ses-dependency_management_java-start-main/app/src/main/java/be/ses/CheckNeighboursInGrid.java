@@ -53,31 +53,4 @@ public class CheckNeighboursInGrid {
 
         return neighboursWithSameValue;
     }
-
-    public static void main(String[] args) {
-        // Testgegevens instellen
-        List<Integer> grid = new ArrayList<>();
-        grid.add(2);  // Index 0
-        grid.add(3);  // Index 1
-        grid.add(5);  // Index 2
-        grid.add(6);  // Index 3
-        grid.add(6);  // Index 4
-        grid.add(6);  // Index 5
-        grid.add(6);  // Index 6
-        grid.add(9);  // Index 7
-        grid.add(2);  // Index 8
-
-        int width = 3; // Breedte van de grid
-        int height = 3; // Hoogte van de grid
-        int indexToCheck = 4; // De index waarvan we de buren willen controleren
-
-        // Verkrijg de buurindexen met dezelfde waarde
-        Iterable<Integer> result = getSameNeighboursIds(grid, width, height, indexToCheck);
-
-        // Afdrukken van de resultaten
-        System.out.println("Neighbours with the same value as index " + indexToCheck + ":");
-        for (Integer index : result) {
-            System.out.println("Index: " + index);
-        }
-    }
 }
