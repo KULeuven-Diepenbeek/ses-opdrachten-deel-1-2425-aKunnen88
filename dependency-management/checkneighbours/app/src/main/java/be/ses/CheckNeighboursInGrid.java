@@ -33,12 +33,6 @@ public class CheckNeighboursInGrid {
             }
         }
 
-        if (row < height - 1) {
-            if (gridList.get(indexToCheck + width) == valueToCheck) {
-                neighboursWithSameValue.add(indexToCheck + width);
-            }
-        }
-
         if (col > 0) {
             if (gridList.get(indexToCheck - 1) == valueToCheck) {
                 neighboursWithSameValue.add(indexToCheck - 1);
@@ -51,6 +45,16 @@ public class CheckNeighboursInGrid {
             }
         }
 
+        if (row < height - 1) {
+            if (gridList.get(indexToCheck + width) == valueToCheck) {
+                neighboursWithSameValue.add(indexToCheck + width);
+            }
+        }
+
+        if (indexToCheck < 0 || indexToCheck >= gridList.size()) {
+            throw new IndexOutOfBoundsException("Index out of bounds");
+        }
+
         return neighboursWithSameValue;
     }
 
@@ -58,13 +62,13 @@ public class CheckNeighboursInGrid {
         // Testgegevens instellen
         List<Integer> grid = new ArrayList<>();
         grid.add(2);  // Index 0
-        grid.add(3);  // Index 1
+        grid.add(6);  // Index 1
         grid.add(5);  // Index 2
         grid.add(6);  // Index 3
         grid.add(6);  // Index 4
         grid.add(6);  // Index 5
         grid.add(6);  // Index 6
-        grid.add(9);  // Index 7
+        grid.add(6);  // Index 7
         grid.add(2);  // Index 8
 
         int width = 3; // Breedte van de grid
