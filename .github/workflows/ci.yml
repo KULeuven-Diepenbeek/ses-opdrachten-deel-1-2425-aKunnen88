@@ -1,0 +1,32 @@
+name: CI Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+      working-directory: ./dependency-management/checkneighbours
+
+    - name: Build and Run Tests with Gradle Wrapper
+      run: find . -name "gradlew" -exec ./{} test \;
+      working-directory: ./dependency-management/checkneighbours
