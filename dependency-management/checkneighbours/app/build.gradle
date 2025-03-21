@@ -33,7 +33,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'be.ses.App'
+    mainClass = 'be.ses.CheckNeighboursInGrid'
 }
 
 tasks.named('test') {
@@ -44,8 +44,8 @@ tasks.named('test') {
 jar {
     manifest {
         attributes(
-            'App': application.mainClass // Dit verwijst correct naar de juiste mainClass
+            'CheckNeighboursInGrid': application.mainClass // Dit verwijst correct naar de juiste mainClass
         )
     }
-    archiveBaseName = 'CheckNeighboursInGridTest'  // De naam van de gegenereerde jar
+    archiveBaseName = 'checkneighboursingrid'  // De naam van de gegenereerde jar
 }

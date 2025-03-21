@@ -67,7 +67,7 @@ public class CheckNeighboursInGrid {
         grid.add(6);  // Index 3
         grid.add(6);  // Index 4
         grid.add(6);  // Index 5
-        grid.add(6);  // Index 6
+        grid.add(4);  // Index 6
         grid.add(6);  // Index 7
         grid.add(2);  // Index 8
 
